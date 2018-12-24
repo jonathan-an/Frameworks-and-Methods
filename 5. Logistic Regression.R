@@ -1,8 +1,8 @@
-### Assignment 5 Section 1: Logistic Regression ###
+### Section 1: Logistic Regression ###
 
 # Read the data
 orig.ebayAssignment = read.csv(file = 
-                                 "Desktop/Frameworks and Methods/Assignments/Assignment 5/eBayAssignment.csv")
+                                 "eBayAssignment.csv")
 
 # Explore the data
 
@@ -76,7 +76,7 @@ orig.ebayAssignment %>%
 
 
 
-### Assignment 5 Section 2: Logistic Regression ###
+### Section 2: Logistic Regression ###
 
 # 1. Split the Data into a train sample and a test sample using a seed 
 # of 196 such that 80% of the data is in the train sample. 
@@ -231,7 +231,7 @@ summary(model1)
 
 
 
-### Assignment 5 Section 3: Logistic Regression ###
+### Section 3: Logistic Regression ###
 
 # 1. Simpler models are generally preferred to more complex models because 
 # they are less likely to overfit the data. So, let us drop out non-signficant 
@@ -304,9 +304,6 @@ exp(summary(model2)$coef[10])
 # 1.911807
 # relative to iPad1, iPad 3 is 1.9 times more likely to sell
 
-# Now for yourself, after answering the above question, 
-# see if you can also find out how much better one sells than the other! 
-
 ### ANS: iPad 3
 
 
@@ -376,7 +373,7 @@ summary(model2)
 
 
 
-### Assignment 5 Section 4: Logistic Regression ###
+### Section 4: Logistic Regression ###
 
 # 1. Make predictions on the test set using model2. 
 # Place all the predictions in a variable "pred".
