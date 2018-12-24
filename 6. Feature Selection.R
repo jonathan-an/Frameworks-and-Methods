@@ -1,9 +1,9 @@
-###  Assignment 6 Section 1: Feature Selection ###
+### Section 1: Feature Selection ###
 
 # Read the data
 
 orig.houses = read.csv(
-  file = "Desktop/Frameworks and Methods/Assignments/Assignment 6/houses.csv")
+  file = "houses.csv")
 
 View(orig.houses)
 summary(orig.houses)
@@ -182,7 +182,7 @@ vif(model1)
 
 
 
-### Assignment 6 Section 2: Feature Selection ###
+### Section 2: Feature Selection ###
 
 # 1. Let’s examine some algorithm driven ways of feature selection 
 # predictors for price. We are going to select from the following predictors:
@@ -379,15 +379,6 @@ summary(lassoModel_lm)$r.squared
 # 0.6435414
 
 ### ANS: 0.6435414
-
-
-# cvm = mean cross-validated error - a vector of length length(lambda).
-R2_lasso =  1 - cv.lasso$cvm/var(y)
-R2_lasso
-# returns a list of numbered list from 1 to 66
-# not sure which one to choose
-
-##############################################
 
 
 
