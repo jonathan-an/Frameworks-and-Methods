@@ -1,4 +1,4 @@
-### Assignment 4 Section 1: Linear Regression ###
+### Section 1: Linear Regression ###
 
 # Read Data
 # Set the working drive to import the file
@@ -99,7 +99,6 @@ train %>%
   # harder to compare across panels.
   facet_wrap(~numericVariable, scales='free_y')
 
-
 # What is the living area (sqft_living) for the house with the most bedrooms?
 train %>%
   filter(bedrooms > 30) %>%
@@ -127,11 +126,8 @@ ggplot(data = train, aes(x = sqft_living, y = price)) +
 
 
 # 5. What is the correlation between sqft_living and price? 
-# (Do you see a link between the scatterplot and the correlation measure?)
-# For this question, an unrounded answer is acceptable.  
-# Answers with three decimal place precision will also earn full credit. 
-# E.g., if the answer is 1.123456, the result of round(x = 1.123456, digits = 3) 
-# which is 1.123 will also earn full credit.
+# Do you see a link between the scatterplot and the correlation measure?
+
 cor(train$sqft_living, train$price)
 
 # check
@@ -142,7 +138,7 @@ cor(train$price, train$sqft_living)
 
 
 
-### Assignment 4 Section 2: Linear Regression ### 
+### Section 2: Linear Regression ### 
 
 # 1. Construct a simple regression to predict house price from area (sqft_living).
 # Call this model1. Let us examine how well the model is predicting price. 
@@ -172,11 +168,6 @@ summary(model1)
 
 # 2. What is the R2 for model1? Do not round your answer. 
 # (Think about what this says about model performance).
-
-# For this question, an unrounded answer is acceptable.  
-# Answers with three decimal place precision will also earn full credit. 
-# E.g., if the answer is 1.123456, the result of round(x = 1.123456, digits = 3)
-# which is 1.123 will also earn full credit.
 
 # get the R^2 // 0.4985522
 summary(model1)$r.squared
@@ -378,7 +369,7 @@ sqrt(mean(model1$residuals^2)) < sqrt(mean(model2$residuals^2))
 
 
 
-### Assignment 4 Section 3: Linear Regression ###
+### Section 3: Linear Regression ###
 
 # 1. Now let us use both the predictors from model1 and model2 to predict price.
 # Use sqft_living and  waterfront to predict price. 
@@ -430,10 +421,6 @@ model3$coef[3]*1
 # bedrooms, bathrooms, sqft_living, sqft_lot, floors, waterfront, view, 
 # condition, grade, age
 # Call this model4. What is the R2 for model4?
-# For this question, an unrounded answer is acceptable.  
-# Answers with three decimal place precision will also earn full credit. 
-# E.g., if the answer is 1.123456, the result of round(x = 1.123456, digits = 3) 
-# which is 1.123 will also earn full credit.
 
 # multiple regression - many variables
 model4 = lm(price~
@@ -568,6 +555,8 @@ summary(model4)
 model4$coef[3] * 1
 
 ### ANS: 50744.76 
+
+
 
 # 8. Of all the predictors in model4, 
 # which exerts the strongest influence on price?
