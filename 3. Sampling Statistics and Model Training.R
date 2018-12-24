@@ -7,7 +7,6 @@
 # Trees
 # Support Vector Machines
 
-# Based on Slide 9 graph of 'Modeling Framework' deck, 
 # Support Vector Machines has the lowest interpretability.
 
 # ANS: SUPPORT VECTOR MACHINES
@@ -60,8 +59,6 @@ str(OJ)
 # Models perform better on the sample used to train the model
 # However, it will perform worse on datasets not used to train the model
 
-# Based on Slide 26 graph of 'Modeling Framework' deck, 
-# Training Sample (blue line)
 # prediction error decreases as model complexity increases
 
 # Ans: TRUE
@@ -70,8 +67,6 @@ str(OJ)
 # 5. As model complexity goes up, prediction error on sample NOT used to 
 # estimate the model (i.e, test data) first goes down, then goes up. 
 
-# Based on Slide 26 graph of 'Modeling Framework' deck, 
-# Test Sample (red line) 
 # Prediction error decreases and then increases as complexitity increases (curves)
 # Rationale: This is an outcome of overfitting.
 # There is high bias initally as the model tracks closely to the test sample.
