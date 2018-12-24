@@ -12,19 +12,21 @@ View(diamonds)
 diamonds %>%
   summarize(mean(carat))
 
-# alternative way - CORRECT
+# alternative way
 mean(diamonds$carat)
+
 
 # 2. What is the average carat size of an Ideal cut diamond? use dplyr
 diamonds %>%
   filter(cut == "Ideal") %>%
   summarize(mean(carat))
 
-# alternative way - CORRECT
+# alternative way
 diamonds_ideal <- diamonds %>%
   filter(cut == "Ideal")
 
 mean(diamonds_ideal$carat)
+
 
 # 3. Which cut of diamond has the largest variance in carat size? 
 diamonds %>%
@@ -85,7 +87,7 @@ diamonds %>%
   mutate(euro_price = price * .85) %>%
   summarize(mean(euro_price))
   
-# alternative way - CORRECT
+# alternative way
 diamonds_greaterthan1 <- diamonds %>%
   filter(carat >1) %>%
   mutate(euro_price = price * .85)
@@ -94,10 +96,11 @@ mean(diamonds_greaterthan1$euro_price)
 
 
 # 6. Construct a density curve of price. Now, add faceting based on cut. 
-# Hint: facet_grid(cut~.)
 # Next, construct a similar density curve but instead of using faceting, add cut as a color aesthetic.
 # Based on these plots, indicate your agreement with the following statement:
+
 # Ideal cut diamonds tend to be more expensive than Fair cut diamonds
+
 ggplot(data = diamonds, aes(x = price)) +
   geom_density() +
   facet_grid(cut~.)
@@ -119,7 +122,9 @@ ggplot(data = diamonds) +
 # 7. Construct a density curve of carat. Now, add faceting based on cut. 
 # Next, construct a similar density curve but instead of using faceting, add cut as a color aesthetic.
 # Based on these plots, indicate your agreement with the following statement:
+
 # Ideal cut diamonds tend to be larger (i.e., higher carat) than Fair cut diamonds. 
+
 ggplot(data = diamonds, aes(x = carat)) +
   geom_density() +
   facet_grid(cut~.)
@@ -145,11 +150,12 @@ ggplot(data = diamonds) +
   # geom_histogram(binwidth = 0.01)+
   # coord_cartesian(xlim=c(0,2.5))+
   # scale_x_continuous(breaks=seq(0,2.5,0.1))
+
 # The spikes in the density plot represent the popularity of the diamond at a certain carat size. 
 # Which of the following represent peaks (local maxima) in the density plot.  
+
 # Note, the numbers in the choices for this question are approximations and may have an error of +/- 0.02.
 # So, for example if you notice a peak at 0.32, check 0.3 below. 
-# (Can you think of a reason for these peaks?) 
 
 ggplot(data=diamonds,aes(x=carat)) +
   geom_histogram(binwidth = 0.01) +
@@ -220,7 +226,6 @@ results %>%
 # ordering is off
 results %>% 
   gather(key=model, value=metric, 1:3)
-
 
 
 # 10. We want to compute the average of variable x. 
