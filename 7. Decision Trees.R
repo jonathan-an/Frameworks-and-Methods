@@ -1,10 +1,9 @@
-### Assignment 7 Section 1: Decision Trees ###
+### Section 1: Decision Trees ###
 
 # Read Data
 # Set the working drive to import the file
 getwd()
-setwd("~/Desktop/Frameworks and Methods/Assignments/Assignment 7")
-orig.wages = read.csv(file = "assignment7_wages.csv")
+orig.wages = read.csv(file = "wages.csv")
                     
 View(orig.wages)
 summary(orig.wages)
@@ -107,7 +106,7 @@ nrow(train)
 
 
 
-###  Assignment 7 Section 2: Decision Trees ###
+### Section 2: Decision Trees ###
 
 # 1. Now, construct a linear regression model to predict earn using 
 # all other variables. Call this model1
@@ -261,7 +260,7 @@ sqrt(mean(model2$residuals^2))
 
 
 
-# 8. The rmse for model2 is lower than rmse for model1. (Think why?) 
+# 8. The rmse for model2 is lower than rmse for model1.
 
 sqrt(mean(model1$residuals^2))
 # 26567.31
@@ -347,7 +346,7 @@ summary(model5)
 
 
 
-### Assignment 7 Section 3: Decision Trees ###
+### Section 3: Decision Trees ###
 
 # 1. Develop a regression tree model to predict earn.
 # Call the rpart and rpart.plot libraries and then construct a 
@@ -378,6 +377,8 @@ rpart.plot(tree1)
 prp(tree1,digits=5)
 
 ### sex
+
+
 
 # 2. Based on the tree plot, which of the following is true 
 # about people who earn the most?
@@ -421,6 +422,7 @@ rmse_tree1
 # 24367.89
 
 
+
 # 6. Now, let us change the defaults for the tree model by, 
 # first reducing complexity and then adding complexity. 
 # We use the minbucket parameter, one of many ways to change complexity 
@@ -462,6 +464,7 @@ treeSimp2 = rpart(earn~.,data=train,control=rpart.control(minbucket=50))
 rpart.plot(treeSimp2)
 
 ### 7
+
 
 
 # 9. What is the rmse for treeSimp2 (on train sample)?
@@ -522,7 +525,7 @@ rmse_treeComplex2 # 23180.9
 
 
 
-### Assignment 7 Section 4: Decision Trees ###
+### Section 4: Decision Trees ###
 
 # 1. For an unbiased measure of model performance, we assess performance 
 # on the test sample.
@@ -540,6 +543,7 @@ my.rmse(test$earn,predictions_model5_test)
 # 27949.29
 
 
+
 # 2. What is the test set rmse for the tree1?
 
 predictions_test = predict(tree1, newdata = test)
@@ -554,6 +558,8 @@ my.rmse(test$earn,predictions_test)
 
 ### 29545.45
 
+
+
 # 3. What is the test set rmse for treeSimp2?
 
 predictions_Simp2_test = predict(treeSimp2, newdata = test)
@@ -566,6 +572,8 @@ rmse_treeSimp2_test
 # 28238.25
 
 ### 28238.25
+
+
 
 # 4. What is the test set rmse for treeComplex2?
 
