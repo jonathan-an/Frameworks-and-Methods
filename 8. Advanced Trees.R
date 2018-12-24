@@ -1,4 +1,4 @@
-### Assignment 8 Section 1: Advanced Decision Trees ###
+### Section 1: Advanced Decision Trees ###
 
 # 1. Load the dataset OJ by calling the ISLR library.
 # library(ISLR)
@@ -61,6 +61,8 @@ train_OJ %>%
 
 ### ANS: 2.087223
 
+
+
 # 4. What is the average Discount for Minute Maid (in the train sample)? 
 # Do not round your answer and do not include currency units.
 
@@ -82,7 +84,7 @@ train_OJ %>%
 
 
 
-### Assignment 8 Section 2: Advanced Decision Trees ###
+### Section 2: Advanced Decision Trees ###
 
 # 1. Let us construct a classification tree model to predict "Purchase" 
 # of Citrus Hill and MinuteMaid using the following variables:
@@ -98,6 +100,7 @@ train_OJ %>%
 # (rather than a regression tree) produces a matrix of probabilities of 
 # 0 and probabilities of 1. When entering the predictions into the prediction
 # function of the ROCR package, you need to use pred[,2] and not pred. 
+
 # As an e.g.,
 # pred = predict(treeModel,newdata=test)
 # ROCRpred = prediction(pred[,2],test$dependentVariable)
@@ -209,13 +212,12 @@ as.numeric(performance(ROCRpred_cp,"auc")@y.values)
 
 
 
-### Assignment 8 Section 3: Advanced Decision Trees ###
+### Section 3: Advanced Decision Trees ###
 
 # 1. Using the same variables employed in the classification tree model, 
 # let us construct a bag model. Use 1000 trees. 
 # Remember, we are running a bag model here, so one has to set a value 
 # for mtry. 
-# (Hint: Think of the difference between a bag model and a random forest model.)
 
 # Set seed to 100 just before the step where you run the bag model.
 
